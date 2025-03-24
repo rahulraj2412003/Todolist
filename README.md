@@ -12,5 +12,5 @@ python manage.py runserver
 *****Admin Login****
 django-admin createsuperuser
 userid : todo
-emailid : todo@gmail.com
+emailid : todo123@gmail.com
 password : todo@123
