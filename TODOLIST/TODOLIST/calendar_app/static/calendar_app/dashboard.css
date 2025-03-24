@@ -1,0 +1,202 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #454546, #2575fc); /* Gradient background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: white; /* Text color for better contrast */
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: slideInDown 0.8s ease-in-out;
+}
+span{
+    font-size: 40px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(250, 252, 251);
+}
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+a {
+    color: #f9f9f9; /* Light blue link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f11111;
+}
+
+h3 {
+    margin-top: 40px;
+    color: #f5f8f9;
+    text-align: center;
+    animation: slideInLeft 0.8s ease-in-out;
+}
+
+form {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent form background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 90%;
+    animation: slideInRight 0.8s ease-in-out;
+}
+
+form p {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #f9fafb;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: calc(100% - 22px);
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #42a5f5;
+    outline: none;
+}
+
+button[type="submit"] {
+    background: #42a5f5;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #1e88e5;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%; /* Changed width to 100% */
+}
+
+li {
+    background-color: whitesmoke; /* Changed background to whitesmoke */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeInUp 0.8s ease-in-out;
+    color: #333; /* Changed text color to dark for better readability */
+}
+
+li div {
+    flex-grow: 1;
+}
+
+li strong {
+    color: #555; /* Darker color for strong text */
+}
+
+li a {
+    margin-left: 10px;
+    padding: 8px 15px;
+    border: 1px solid #42a5f5;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333; /* Dark color for links */
+}
+
+li a:hover {
+    background: #42a5f5;
+    color: white;
+}
+.edit_btn{
+    margin-right: -50px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

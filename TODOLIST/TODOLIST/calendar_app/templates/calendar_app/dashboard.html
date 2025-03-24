@@ -1,0 +1,81 @@
+{% comment %} {% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'calendar_app/dashboard.css'%}">
+    </head>
+    <body>
+        <h2>Dashboard</h2>
+        <p>Welcome, <span>{{ user.username }}!</span></p>
+        <a href="/logout/">Logout</a>
+
+        <h3>Add Task</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Add Task</button>
+        </form>
+        <h3>Your Tasks</h3>
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <strong>{{ task.title }}</strong> - {{ task.description }}
+                <small>Created: {{ task.created_at }}</small>
+                <a href="/edit-task/{{ task.id }}/" class='edit_btn'>Edit</a>
+                <a href="/delete-task/{{ task.id }}/">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+
+    </body>
+</html> {% endcomment %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'calendar_app/dashboard.css' %}">
+</head>
+<body>
+    <h2>Dashboard</h2>
+    <p>Welcome, <span>{{ user.username }}!</span></p>
+    <a href="/logout/">Logout</a>
+
+    <h3>Add Task</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Task</button>
+    </form>
+    <h3>Your Tasks</h3>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            <strong>{{ task.title }}</strong> - {{ task.description }}
+            <small>Created: {{ task.created_at }}</small>
+            <small>
+                {% if task.completed %}
+                    Completed
+                {% else %}
+                    Not Completed
+                    <a href="{% url 'complete_task' task.id %}">Mark as Completed</a>
+                {% endif %}
+            </small>
+            <a href="/edit-task/{{ task.id }}/" class='edit_btn'>Edit</a>
+            <a href="/delete-task/{{ task.id }}/">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

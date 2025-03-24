@@ -1,0 +1,39 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Tool Landing Page</title>
+    <link rel="stylesheet" href="{% static 'calendar_app/home.css'%}">
+</head>
+<body>
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">How it work</a>
+            <a href="#">Contact Us</a>
+            <a href="#">About Us</a>
+        </nav>
+        <div class="auth">
+            <div class="auth">
+                <a href="{% url 'login' %}" class="login"><button>Log in</button></a>
+                <a href="{% url 'signup' %}" class="signup"><button>Sign Up</button></a>
+                <a href="{% url 'admin:index' %}" class="admin"><button>Admin Login</button></a>
+            </div>            
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="content">
+            <h1>TASK MANAGEMENT TOOL</h1>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisi ut aliquip ex ea.</p>
+            <button class="join-now">JOIN NOW</button>
+        </div>
+        <div class="illustration">
+            <img src="{%static 'calendar_app/images/todo.jpg'%}" alt="Task Management Illustration">
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'calendar_app/edit.css' %}">
+<h2>Edit Task</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <label for="completed">Completed:</label>
+    <input type="checkbox" name="completed" id="completed" {% if form.completed.value %}checked{% endif %}>
+    <button type="submit">Save Changes</button>
+</form>
